@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.py[cod]
+
+# Keep the personal assignment report and its Word lock file out of GitHub.
+Data_Visualization_Assignment_Report.docx
+~$*.docx
