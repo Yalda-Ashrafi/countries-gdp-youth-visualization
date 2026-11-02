@@ -38,20 +38,67 @@ provided file:
 Population is validated and its missing values are reported, but it is not
 used to size or filter the scatter-plot points.
 
-## Corrected visualization examples
+## Original visuals and corrected designs
 
-The repository includes redesigns of three visuals from the assignment:
+The image below preserves the three original visuals as supplied in the
+assignment. The issues and redesigns are described below it.
 
-| File | Redesign |
-| --- | --- |
-| `Corrected_Election_Graphic.png` | A common zero baseline for the 46% and 47% values shown in the supplied image. |
-| `Corrected_Cost_Trend_Mockup.png` | A multi-series line-chart layout for comparing categories over time. |
-| `Corrected_Ancestry_Mockup.png` | A sorted horizontal bar-chart layout for comparing normalized prevalence. |
+<img src="Original_Visuals.png" alt="Original election graphic, stacked cost chart, and European ancestry map" width="900">
 
-The election values are transcribed from the supplied image; polling source,
-date, sample size, and margin of error were not provided. The cost and ancestry
-charts are **illustrative mockups with invented values**, not findings from
-the original charts. Their underlying source data was not supplied.
+### 1. Election graphic: Trump 47% vs. Biden 46%
+
+**What is wrong:** The bars do not communicate a clear common zero baseline,
+so the one-percentage-point difference can appear much larger than it is.
+The headline also presents a narrow lead as decisive without showing polling
+uncertainty or context.
+
+**How to correct it:** Use equal scales and a clearly marked 0% baseline, or
+use a dot plot that presents the small difference without exaggeration. Add
+the poll source, date, sample size, and margin of error; avoid claims stronger
+than the poll supports.
+
+**Corrected example:**
+
+![Election percentages shown with a common zero baseline](Corrected_Election_Graphic.png)
+
+The 46% and 47% values are transcribed from the supplied image. Poll metadata
+were not provided.
+
+### 2. Stacked bar chart: average cost charge by year
+
+**What is wrong:** The many categories, colors, and labels make the chart hard
+to read. Stacking averages suggests the segments add to a meaningful total,
+and makes it difficult to compare most categories between years.
+
+**How to correct it:** Use a line chart with one line per category, or small
+multiples when there are too many categories. Focus on the most relevant
+categories, simplify the palette, remove unnecessary labels, and state the
+cost units clearly.
+
+**Corrected layout example:**
+
+![Illustrative multi-series line-chart redesign for cost trends](Corrected_Cost_Trend_Mockup.png)
+
+This is an **illustrative mockup with invented values**, not a result from the
+original chart; its source data was not supplied.
+
+### 3. European ancestry map
+
+**What is wrong:** Overlapping labels and unrelated colors make values hard to
+compare. Absolute counts can also mislead when comparing prevalence across
+populations of different sizes; ancestry responses may overlap.
+
+**How to correct it:** A sorted bar chart is easier to compare. Define the
+measure, use percentages when comparing prevalence, explain how multiple
+ancestry responses are handled, and move detailed values to a separate table
+or interactive labels.
+
+**Corrected layout example:**
+
+![Illustrative sorted bar-chart redesign for ancestry prevalence](Corrected_Ancestry_Mockup.png)
+
+This is an **illustrative mockup with invented values and generic labels**,
+not a result from the original map; its source data was not supplied.
 
 ## Run the analysis
 
@@ -86,6 +133,7 @@ running the script.
 | `analysis.py` | Validates the input data, calculates the correlation, and generates the scatter plot. |
 | `countries_population_gdp_youth.csv` | Supplied country/economy data. |
 | `Correlation_GDP_Youth.png` | Generated GDP and youth-share scatter plot. |
+| `Original_Visuals.png` | Supplied image showing the three original visuals being critiqued. |
 | `Corrected_Election_Graphic.png` | Election graphic redesign. |
 | `Corrected_Cost_Trend_Mockup.png` | Illustrative cost-chart redesign. |
 | `Corrected_Ancestry_Mockup.png` | Illustrative ancestry-chart redesign. |
